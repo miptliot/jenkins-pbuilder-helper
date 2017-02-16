@@ -13,13 +13,13 @@ class MyEnsure
     end
   end
 
-  def system(*args)
+  def self.system(*args)
     if system(*args) != true
       Notify.fatal("#{args.join(' ')}: returned error")
     end
   end
 
-  def backticks(cmd)
+  def self.backticks(cmd)
     output = `#{cmd}`
     if $?.exitstatus != 0
       Notify.fatal("#{cmd}: returned error")
@@ -28,7 +28,7 @@ class MyEnsure
     output
   end
 
-  def env(var)
+  def self.env(var)
     unless ENV.has_key?(var)
       Notify.fatal("#{var}: should be defined in the environment")
     end
@@ -36,7 +36,7 @@ class MyEnsure
     ENV[var]
   end
 
-  def cp(src, dst)
+  def self.cp(src, dst)
     begin
       FileUtils.cp(MyEnsure.env('git_ssh_key'), "debian/git_ssh_key", :verbose => true)
     rescue Exception => e
