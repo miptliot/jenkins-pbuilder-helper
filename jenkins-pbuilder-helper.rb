@@ -21,7 +21,8 @@ pkg_name = 'npoed-sso-edx'
 pkg_version = [commit.time, commit.hash, build_number].join('~')
 pkg_arch = 'amd64'
 
-MyEnsure.cp(MyEnsure.env('git_ssh_key'), "debian/git_ssh_key")
+# we need to copy ssh key since we going to use chroot environment to build
+MyEnsure.install(MyEnsure.env('git_ssh_key'), "debian/git_ssh_key", :mode => 0600, :verbose => true)
 
 # ==== 2. generate changelog =================================================
 ERBRenderer.new('debian/changelog').generate({

@@ -44,4 +44,12 @@ class MyEnsure
       Notify.fatal(e)
     end
   end
+
+  def self.install(src, dst, opts = {})
+    begin
+      FileUtils.install(src, dst, opts)
+    rescue Exception => e
+      Notify.fatal(e)
+    end
+  end
 end
