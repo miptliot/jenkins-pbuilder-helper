@@ -4,6 +4,7 @@ require_relative 'lib/my_ensure'
 require_relative 'lib/aptly'
 require_relative 'lib/pbuilder'
 require_relative 'lib/git_info'
+require_relative 'lib/erb_renderer'
 
 # ==== 1. check, collect and prepare all needed info =========================
 MyEnsure.dir('debian/')
