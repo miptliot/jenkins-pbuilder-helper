@@ -37,14 +37,6 @@ class MyEnsure
     ENV[var]
   end
 
-  def self.cp(src, dst)
-    begin
-      FileUtils.cp(MyEnsure.env('git_ssh_key'), "debian/git_ssh_key", :verbose => true)
-    rescue Exception => e
-      Notify.fatal(e)
-    end
-  end
-
   def self.install(src, dst, opts = {})
     begin
       FileUtils.install(src, dst, opts)
