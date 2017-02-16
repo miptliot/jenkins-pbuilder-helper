@@ -15,7 +15,7 @@ class MyEnsure
   end
 
   def self.system(*args)
-    if system(*args) != true
+    if Kernel.system(*args) != true
       Notify.fatal("#{args.join(' ')}: returned error")
     end
   end
