@@ -15,7 +15,7 @@ deb пакета вручную (например у себя локально) 
 Через окружение должны быть переданы переменные:
 
 * `aptly_prefix` — префикс репозитория
-* `aptly_dictribution` — дистрибутив (`deb https://repo/${aptly_prefix} ${aptly_dictribution} main`)
+* `aptly_distribution` — дистрибутив (`deb https://repo/${aptly_prefix} ${aptly_distribution} main`)
 * `BUILD_NUMBER` — выставляется Jenkins'ом
 * `git_ssh_key` — путь к ключу SSH для доступа к дополнительным репозиториям
 
