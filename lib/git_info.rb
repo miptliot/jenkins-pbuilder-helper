@@ -1,4 +1,4 @@
-require 'notify'
+require_relative 'notify'
 
 class GitInfo
   attr_reader :rfc_date, :time, :hash, :changelog_lines
