@@ -22,7 +22,9 @@ pkg_version = [commit.time, commit.hash, build_number].join('~')
 pkg_arch = 'amd64'
 
 # we need to copy ssh key since we going to use chroot environment to build
-MyEnsure.install(MyEnsure.env('git_ssh_key'), "debian/git_ssh_key", :mode => 0600, :verbose => true)
+if ENV.has_key?('git_ssh_key')
+  MyEnsure.install(ENV['git_ssh_key'], "debian/git_ssh_key", :mode => 0600, :verbose => true)
+end
 
 # ==== 2. generate changelog =================================================
 ERBRenderer.new('debian/changelog').generate({
