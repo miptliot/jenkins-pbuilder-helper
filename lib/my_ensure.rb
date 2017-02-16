@@ -1,3 +1,4 @@
+require 'fileutils'
 require_relative 'notify'
 
 class MyEnsure
