@@ -8,8 +8,7 @@ class Pbuilder
     MyEnsure.dir(@cache)
   end
 
-  def run
-    # FIXME: pass 'debian8' from outside
-    MyEnsure.system("sudo -H pdebuild -- --basetgz #{@cache}/debian8.tgz --use-network yes")
+  def run(distribution)
+    MyEnsure.system("sudo -H pdebuild -- --basetgz #{@cache}/#{distribution}.tgz --use-network yes")
   end
 end

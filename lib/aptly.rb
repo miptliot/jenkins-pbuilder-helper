@@ -1,6 +1,8 @@
 require_relative 'notify'
 
 class Aptly
+  attr_reader :distribution
+
   def initialize(prefix, distribution)
     @prefix = prefix
     @distribution = distribution

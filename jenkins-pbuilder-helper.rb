@@ -34,7 +34,7 @@ ERBRenderer.new('debian/changelog').generate({
 })
 
 # ==== 3. build ==============================================================
-pbuilder.run
+pbuilder.run(aptly.distribution)
 
 # ==== 4. publish to repository ==============================================
 result = "#{pbuilder.cache}/result/#{pkg_name}_#{pkg_version}_#{pkg_arch}.deb"
