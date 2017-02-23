@@ -2,6 +2,8 @@ require_relative 'my_ensure'
 require_relative 'pbuilder'
 require_relative 'git_info'
 require_relative 'aptly'
+require_relative 'erb_renderer'
+require_relative 'notify'
 
 class MyPackage
   def initialize
